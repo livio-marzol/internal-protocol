@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protocolo Interno</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Overlay CSS leve: vinheta escura + grão de filme (custo zero de GPU WebGL) -->
+    <div id="film-overlay" aria-hidden="true">
+      <div class="film-grain"></div>
+      <div class="vignette"></div>
+    </div>
+
+    <!-- Tela de carregamento inicial -->
+    <div id="loading-screen">
+      <div class="loading-box">
+        <div class="loading-title">PROTOCOLO INTERNO</div>
+        <div class="loading-bar-bg">
+          <div id="loading-bar-fill"></div>
+        </div>
+        <div id="loading-text">Carregando malha base e animações...</div>
+      </div>
+    </div>
+
+    <!-- Monitor de FPS e Draw Calls (canto superior direito) -->
+    <div id="perf-hud">
+      <div><span class="label">FPS</span> <span id="hud-fps">--</span></div>
+      <div><span class="label">MS</span> <span id="hud-ms">--</span></div>
+      <div><span class="label">CALLS</span> <span id="hud-calls">--</span></div>
+      <div><span class="label">TRIS</span> <span id="hud-tris">--</span></div>
+    </div>
+
+    <!-- Aviso sutil de câmera -->
+    <div id="center-hint">
+      Clique na tela para ativar o controle do mouse (ESC para liberar)
+    </div>
+
+    <!-- Prompt discreto de interação contextual ([E]) -->
+    <div id="interact-prompt" class="hidden"></div>
+
+    <!-- Pensamento interno sutil de exploração -->
+    <div id="thought-box" class="hidden"></div>
+
+    <!-- HUD minimalista de controles (canto inferior esquerdo) -->
+    <div id="controls-hud">
+      <div class="hud-status">
+        <span id="status-light" class="badge on">Lanterna: ON</span>
+        <span id="status-focus" class="badge">Foco: Normal</span>
+        <span id="status-mode" class="badge">Modo: Normal</span>
+        <span id="status-audio" class="badge">Áudio: OFF</span>
+      </div>
+      <div class="hud-keys">
+        <span><kbd>WASD</kbd> Mover</span>
+        <span><kbd>Mouse</kbd> Mirar / Girar</span>
+        <span><kbd>Botão Esq.</kbd> Lanterna</span>
+        <span><kbd>Botão Dir.</kbd> Foco / Inspeção</span>
+        <span><kbd>E</kbd> Interagir</span>
+        <span><kbd>H</kbd> Ferido</span>
+        <span><kbd>M</kbd> Áudio</span>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

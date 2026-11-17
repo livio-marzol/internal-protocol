@@ -1,0 +1,18 @@
+{
+  "name": "silent-hill-threejs-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Demo jogável em Three.js inspirada em Silent Hill, otimizada para GPUs integradas (Vega 7)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
